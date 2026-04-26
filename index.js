@@ -3,7 +3,10 @@ import dbConnector from "./config/dbConnector.js";
 import router from "./routes/allRouter.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
+import 'dotenv/config'
 const app = express()
+
+const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cookieParser())
@@ -22,6 +25,6 @@ dbConnector()
 
 app.use("/api" , router)
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log("The server is running!")
 })
