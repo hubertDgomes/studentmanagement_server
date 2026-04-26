@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin : ["https://studentmanagement-3u7bw7duh-hubert-gomes-projects.vercel.app"],
+    origin : ["http://localhost:3000"],
     credentials : true
 }))
 

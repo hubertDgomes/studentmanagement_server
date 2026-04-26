@@ -27,8 +27,8 @@ const signupController = async (req, res) => {
             const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET, { expiresIn: "2d" })
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "lax"
+                secure: true,
+                sameSite: "none"
             })
             return res.status(200).json({ message: "Signup Completed!" })
         });
@@ -56,8 +56,8 @@ const loginController = async (req, res) => {
         let token = jwt.sign({ id: checkUser._id, role: checkUser.role }, process.env.JWT_SECRET, { expiresIn: "2d" })
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax"
+            secure: true,
+            sameSite: "none"
         })
         return res.status(200).json({
             message: "Login Successfull!", user: {
