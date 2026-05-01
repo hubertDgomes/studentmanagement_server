@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin : ["http://localhost:3000" , "https://studentmanagement-zeta.vercel.app" , "https://students-175uq8pz9-gomesandrias-projects.vercel.app"],
+    origin : ["http://localhost:3000" , "https://studentmanagement-zeta.vercel.app" , "https://students-eta-one.vercel.app"],
     credentials : true
 }))
 
